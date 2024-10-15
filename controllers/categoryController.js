@@ -2,25 +2,18 @@ import Category from "../models/category.js"
 
 export function createCategory(req,res){
 
-  if(req.user == null){
-    res.status(401).json({
-      message : "Unauthorized"
-    })
+  if(req.user == null){res.status(401).json({message : "Unauthorized"})
     return
   }
   if(req.user.type != "admin"){
-    res.status(403).json({
-      message : "Forbidden"
-    })
+    res.status(403).json({message : "Forbidden"})
     return
   }
   const newCategory = new Category(req.body)
-  newCategory.save().then(
-    (result)=>{
-
-      res.json(
-        {
-          message : "Category created successfully",
+  newCategory.save().then((result)=>{
+    res.json(
+      {
+        message : "Category created successfully",
           result : result
         }
       )
@@ -41,16 +34,10 @@ export function createCategory(req,res){
 
 //delete category
 export function deleteCategory(req,res){
-  if(req.user == null){
-    res.status(401).json({
-      message : "Unauthorized"
-    })
+  if(req.user == null){res.status(401).json({message : "Unauthorized"})
     return
   }
-  if(req.user.type != "admin"){
-    res.status(403).json({
-      message : "Forbidden"
-    })
+  if(req.user.type != "admin"){res.status(403).json({message : "Forbidden"})
     return
   }
   const name = req.params.name
@@ -73,8 +60,7 @@ export function deleteCategory(req,res){
   )
   
 }
-export function getCategory(req,res){
-  Category.find().then(
+export function getCategory(req,res){Category.find().then(
     (result)=>{
       res.json(
         {
