@@ -11,3 +11,4 @@ roomRouter.get("/:roomId", findRoomById)
 roomRouter.put("/:roomId", updateRoom)
 
 export default roomRouter
+
