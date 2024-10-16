@@ -9,11 +9,10 @@ import {
 
 const router = express.Router();
 
-// Routes for room management
-router.post("/", createRoom);            // Create a new room (admin-only)
-router.get("/", getRooms);               // Get all rooms (public)
-router.get("/:id", getRoomById);         // Get room by ID (public)
-router.put("/:id", updateRoom);          // Update a room by ID (admin-only)
-router.delete("/:id", deleteRoom);       // Delete a room by ID (admin-only)
+router.post("/", createRoom);           
+router.get("/", getRooms);               
+router.get("/:id", getRoomById);      
+router.put("/:id", updateRoom);         
+router.delete("/:id", deleteRoom);       
 
 export default router;

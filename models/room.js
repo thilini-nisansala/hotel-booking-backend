@@ -18,10 +18,6 @@ const roomSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  size: {
-    type: Number,
-    required: true,
-  },
   available: {
     type: Boolean,
     default: true,
